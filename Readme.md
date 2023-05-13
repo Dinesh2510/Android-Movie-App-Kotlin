@@ -9,8 +9,8 @@
 | Splash | Main Screen |  Main Screen 2 |
 |:-:|:-:|:-:|
 | ![Fist](screenshots/ss1.jpg?raw=true) | ![3](screenshots/ss2.jpg?raw=true) | ![3](screenshots/ss3.jpg?raw=true) |
-| Movie Details |
-| ![4](screenshots/ss4.jpg?raw=true) | 
+| Movie Details | APK |
+| ![4](screenshots/ss4.jpg?raw=true) | [APK](screenshots/app_movie.apk) |
 
 ## 🌟 Features
 *   Slider of Upcoming Movies
