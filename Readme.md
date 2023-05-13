@@ -1,4 +1,6 @@
 <h1 align="center">Android Movies App</h1>
+<h1 align="center">MVVM + Dagger hilt + Retrofit + Coroutines + Flow + Paging3 + Moshi</h1>
+ 
 <h4 align="center">
 	Discover the most popular and top rated movies playing. Movies data fetched using <a href="https://www.themoviedb.org/">themoviedb.org</a> API.
 </h4>
@@ -47,3 +49,4 @@ Create such application to learn and implement android's new features & framewor
 *   [DataBinding](https://developer.android.com/topic/libraries/data-binding/)
 *   [OkHttp](https://github.com/square/okhttp)
 *   [Kotlin Flow](https://developer.android.com/kotlin/flow)
+*   [Hilt](https://developer.android.com/training/dependency-injection/hilt-android)
