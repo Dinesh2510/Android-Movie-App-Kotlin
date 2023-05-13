@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="spacing0.5x">8dp</dimen>
+    <dimen name="spacing1x">8dp</dimen>
+    <dimen name="spacing2x">16dp</dimen>
+    <dimen name="spacing3x">24dp</dimen>
+
+    <dimen name="radius1x">8dp</dimen>
+
+    <dimen name="elevation1x">8dp</dimen>
+    <dimen name="elevation2x">16dp</dimen>
+
+    <dimen name="movie_detail_backdrop_height">200dp</dimen>
+    <dimen name="movie_detail_poster_width">120dp</dimen>
+    <dimen name="movie_detail_poster_top_margin">170dp</dimen></resources>

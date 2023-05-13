@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="primary">#F2B833</color>
+    <color name="backGround">#1F2123</color>
+    <color name="backGroundAd">#0E1011</color>
+    <color name="mainText">#FFFFFFFF</color>
+    <color name="textAd">#BABABA</color>
+
+    <color name="surface">#FFFFFFFF</color>
+    <color name="surfaceOverlay">#BBFFFFFF</color>
+    <color name="onSurface">#FF202020</color>
+    <color name="background">#FFF8F8F8</color>
+    <color name="backgroundVariant">#FFEDEDED</color>
+    <color name="onBackdrop">#FFFFFFFF</color>
+</resources>
