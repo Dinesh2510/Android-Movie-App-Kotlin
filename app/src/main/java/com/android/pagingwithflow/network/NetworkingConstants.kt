@@ -5,7 +5,7 @@ object NetworkingConstants {
 
 
     const val BASE_URL = "https://api.themoviedb.org/"
-    const val API_KEY = "824b6bb69e075fe68bb7ca471576dca7"
+    const val API_KEY = ""
     const val BASE_POSTER_PATH = "https://image.tmdb.org/t/p/w342"
     const val BASE_BACKDROP_PATH = "https://image.tmdb.org/t/p/w780"
     const val YOUTUBE_VIDEO_URL = "https://www.youtube.com/watch?v="
