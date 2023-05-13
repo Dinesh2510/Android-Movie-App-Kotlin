@@ -7,8 +7,8 @@
 | Splash | Main Screen |  Main Screen 2 |
 |:-:|:-:|:-:|
 | ![Fist](screenshots/ss1.jpg?raw=true) | ![3](screenshots/ss2.jpg?raw=true) | ![3](screenshots/ss3.jpg?raw=true) |
-| Movie Details | Trailers |  Reviews |
-| ![4](screenshots/ss4.jpg?raw=true) | ![5](screenshots/Screenshot_5.jpg?raw=true) | ![6](screenshots/Screenshot_4.jpg?raw=true) |
+| Movie Details |
+| ![4](screenshots/ss4.jpg?raw=true) | 
 
 ## 🌟 Features
 *   Slider of Upcoming Movies
