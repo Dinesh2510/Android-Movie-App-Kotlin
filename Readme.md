@@ -9,8 +9,8 @@
 | Splash | Main Screen |  Main Screen 2 |
 |:-:|:-:|:-:|
 | ![Fist](screenshots/ss1.jpg?raw=true) | ![3](screenshots/ss2.jpg?raw=true) | ![3](screenshots/ss3.jpg?raw=true) |
-| Movie Details | APK |
-| ![4](screenshots/ss4.jpg?raw=true) | [APK](screenshots/app_movie.apk) |
+| Movie Details | APK | Demo Video |
+| ![4](screenshots/ss4.jpg?raw=true) | [APK](screenshots/app_movie.apk) | [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/AE9xLklir_I/0.jpg)](https://www.youtube.com/watch?v=AE9xLklir_I)|
 
 ## 🌟 Features
 *   Slider of Upcoming Movies
