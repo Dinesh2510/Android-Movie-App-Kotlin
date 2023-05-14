@@ -38,4 +38,9 @@
     <style name="ImageButton.OnBackdrop">
         <item name="android:background">?selectableItemBackgroundBorderless</item>
         <item name="tint">@color/onBackdrop</item>
-    </style></resources>
+    </style>
+
+    <style name="ToolbarFontStyle" parent="@style/Base.TextAppearance.AppCompat.Title">
+        <item name="android:fontFamily">@font/bold</item>
+    </style>
+</resources>

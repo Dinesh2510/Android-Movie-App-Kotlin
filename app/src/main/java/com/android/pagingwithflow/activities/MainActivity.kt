@@ -2,12 +2,14 @@ package com.android.pagingwithflow.activities
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.android.pagingwithflow.Utlis.ConnectionLiveData
 import com.android.pagingwithflow.Utlis.ProgressBarHandler
 import com.android.pagingwithflow.adapter.DiscoverMovieCardAdapter
 import com.android.pagingwithflow.adapter.GenreAdapter
@@ -26,17 +28,17 @@ import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityMainBinding
     private val mainViewModel: DiscoverMoveViewModel by viewModels()
     private val movieViewModel: MovieViewModel by viewModels()
     var progressBar: ProgressBarHandler? = null
+    private lateinit var cld: ConnectionLiveData
 
     lateinit var movieSliderAdapter: MovieSliderAdapter
     lateinit var popularMovieAdapter: PopularMovieAdapter
     lateinit var genreAdapter: GenreAdapter
 
-    /*   @Inject
-       lateinit var discoverMovieAdapter: DiscoverMovieAdapter */
     @Inject
     lateinit var discoverMovieCardAdapter: DiscoverMovieCardAdapter
 
@@ -44,19 +46,38 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        //   title = "TMDB APP"
-        progressBar = ProgressBarHandler(this)
-        progressBar!!.show()
-        movieViewModel.getUpcomingMovieResult()
-        movieViewModel.getPopularMovieResult()
-        movieViewModel.getTopRatedMovieResult()
-        movieViewModel.getGenreMovieResult()
-        observeViewModel()
-        binding.MovieSeeAllMovie.setOnClickListener {
-            val intent = Intent(this, DiscoverAllMovie::class.java)
-            startActivity(intent)
+
+        initProgressInternet()
+        initAPiCall();
+    }
+
+    private fun initAPiCall() {
+        cld.observe(this) { isConnected ->
+            if (isConnected) {
+                movieViewModel.getUpcomingMovieResult()
+                movieViewModel.getPopularMovieResult()
+                movieViewModel.getTopRatedMovieResult()
+                movieViewModel.getGenreMovieResult()
+                observeViewModel()
+                binding.MovieSeeAllMovie.setOnClickListener {
+                    val intent = Intent(this, DiscoverAllMovie::class.java)
+                    startActivity(intent)
+                }
+                binding.layout1.visibility = View.VISIBLE
+                binding.layout2.visibility = View.GONE
+            } else {
+                binding.layout1.visibility = View.GONE
+                binding.layout2.visibility = View.VISIBLE
+            }
+
         }
 
+    }
+
+    private fun initProgressInternet() {
+        cld = ConnectionLiveData(application)
+        progressBar = ProgressBarHandler(this)
+        progressBar!!.show()
     }
 
     private fun observeViewModel() {
@@ -134,22 +155,6 @@ class MainActivity : AppCompatActivity() {
             }
 
 
-        }
-    }
-
-    private fun initRecyclerview() {
-        binding.apply {
-            recyclerviewPopular.apply {
-                setHasFixedSize(true)
-                layoutManager =
-                    GridLayoutManager(this@MainActivity, 3, LinearLayoutManager.HORIZONTAL, false)
-                /*
-                                adapter = discoverMovieAdapter.withLoadStateHeaderAndFooter(
-                                    header = LoaderStateAdapter { discoverMovieAdapter::retry },
-                                    footer = LoaderStateAdapter { discoverMovieAdapter::retry }
-                                )
-                */
-            }
         }
     }
 

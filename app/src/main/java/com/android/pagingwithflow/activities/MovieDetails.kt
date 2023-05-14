@@ -31,20 +31,23 @@ class MovieDetails : AppCompatActivity() {
     var movieId: String? = null
     var progressBar: ProgressBarHandler? = null
 
-    @Inject
-    lateinit var discoverMovieAdapter: DiscoverMovieAdapter
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMovieDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        progressBar = ProgressBarHandler(this)
-        progressBar!!.show()
+
+        initProgress();
+        initApiCalls();
+
+
+    }
+
+    private fun initApiCalls() {
         movieId = intent.getStringExtra("MovieIdPass").toString()
         mainViewModel.getMovieDetails(movieId!!)
         mainViewModel.getTrailerResponse(movieId!!)
         binding.backButton.setOnClickListener {
-            onBackPressed()
+            finish()
         }
 
 
@@ -68,7 +71,8 @@ class MovieDetails : AppCompatActivity() {
                                 it
                             ) {
                                 val intent = Intent(Intent.ACTION_VIEW)
-                                intent.data = Uri.parse(NetworkingConstants.YOUTUBE_VIDEO_URL + it.key)
+                                intent.data =
+                                    Uri.parse(NetworkingConstants.YOUTUBE_VIDEO_URL + it.key)
                                 startActivity(intent)
                             }
                         layoutManager = LinearLayoutManager(
@@ -82,6 +86,11 @@ class MovieDetails : AppCompatActivity() {
                 }
             }
         })
+    }
+
+    private fun initProgress() {
+        progressBar = ProgressBarHandler(this)
+        progressBar!!.show()
     }
 
 
